@@ -1,0 +1,27 @@
+{
+  "name": "atac-sistem-api",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "license": "MIT",
+  "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
+    "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js",
+    "migration:generate": "ts-node-dev ./node_modules/typeorm/cli.js migration:generate -d src/database/ormconfig.ts",
+    "migration:up": "ts-node-dev ./node_modules/typeorm/cli.js migration:run -d src/database/ormconfig.ts",
+    "migration:down": "ts-node-dev ./node_modules/typeorm/cli.js migration:revert -d src/database/ormconfig.ts"
+  },
+  "dependencies": {
+    "@types/uuid": "^10.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "pg": "^8.12.0",
+    "reflect-metadata": "^0.2.2",
+    "typeorm": "^0.3.20",
+    "uuid": "^10.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.5.4"
+  }
+}
